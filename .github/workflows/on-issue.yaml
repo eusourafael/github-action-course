@@ -1,0 +1,13 @@
+name: on issue
+on: issues
+jobs:
+  print-details:
+    name: Print details
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Github details
+        run: |
+          echo "Github action: ${{github.action}}"
+      - name: Print Issue details
+        run: |
+          echo "Issue details: ${{toJSON(github.event)}}"
