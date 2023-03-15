@@ -1,0 +1,16 @@
+name: on push
+on: push
+jobs:
+  my-job:
+    name: My job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+        run: |
+          npm run lint
+      - name: Test
+        run: |
+          npm run test
+      - name: Build
+        run: |
+          npm run build
